@@ -1,6 +1,6 @@
 
-frame_root = './external/Penn_Action/frames/';
-label_root = './external/Penn_Action/labels/';
+frame_root = '../external/Penn_Action/frames/';
+label_root = '../external/Penn_Action/labels/';
 
 frdata_root = './data/penn-crop/frames/';
 lbdata_root = './data/penn-crop/labels/';
@@ -11,7 +11,7 @@ list_seq = {list_seq.name}';
 num_seq = numel(list_seq);
 
 % make directory
-makedir(lbdata_root);
+mkdir(lbdata_root);
 
 % reading annotations
 fprintf('preparing cropped dataset ... \n');
