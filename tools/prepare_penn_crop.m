@@ -16,7 +16,7 @@ mkdir(lbdata_root);
 % reading annotations
 fprintf('preparing cropped dataset ... \n');
 for i = 1:num_seq
-    tic_print(sprintf('  %04d/%04d\n',i,num_seq));
+    sprintf('  %04d/%04d\n',i,num_seq);
     % read frames in sequence
     [~,name_seq] = fileparts(list_seq{i});
     fr_dir = [frame_root name_seq '/'];
@@ -28,7 +28,7 @@ for i = 1:num_seq
     assert(anno.nframes == numel(list_fr));
     % set cropped frame dir
     frdata_dir = [frdata_root name_seq '/'];
-    makedir(frdata_dir);
+    mkdir(frdata_dir);
     % get crop window
     x1 = round(min(anno.bbox(:,1)));
     y1 = round(min(anno.bbox(:,2)));
